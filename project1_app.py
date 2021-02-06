@@ -15,18 +15,14 @@ def hello_world():
     
     spotify_data = get_data()
     
-    print(spotify_data['json_r'])
+    # print(spotify_data['json_r'])
     print(spotify_data['num_artists'])
-    print(spotify_data['artist_name'])
+    print(spotify_data['main_artist'])
     print(spotify_data['song_name'])
-    # print(spotify_data['artists'])
+    print(spotify_data['all_artists'])
 
     return render_template(
         "index.html",
-        artist=spotify_data['json_r'],
-        num_artists=spotify_data['num_artists'],
-        artist_name=spotify_data['artist_name'],
-        song_name=spotify_data['song_name'],
     )
 
 app.run(

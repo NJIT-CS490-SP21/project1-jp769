@@ -48,7 +48,6 @@ def get_data():
     # print(len(favorite_artists_id), random_number) #debugging purpose only
     # print(favorite_artists_id[random_number]) # debugigng purpose only
     
-    
     market='?market=US'
     
     # Fetching top tracks of artist
@@ -72,7 +71,7 @@ def get_data():
             main_artist = r['tracks'][random_song]['artists'][i]['name']
         artists.append(r['tracks'][random_song]['artists'][i]['name'])
         
-    print(artists)
+    # print(artists)
 
     return {
         'json_r': json_r,
