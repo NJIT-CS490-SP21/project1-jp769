@@ -59,11 +59,12 @@ def get_data():
     
     # print(len(r['tracks']), random_number) #debugging purpose only
     
-    json_r = r['tracks'][random_song]['artists']
-    num_artists = len(r['tracks'][random_song]['artists'])
+    # json_r = r['tracks'][random_song]['artists']
     song_name = r['tracks'][random_song]['name']
+    song_image = r['tracks'][random_song]['album']['images'][1]['url']
+    song_preview = r['tracks'][random_song]['preview_url']
+    num_artists = len(r['tracks'][random_song]['artists'])
     main_artist = ''
-    
     artists=[]
     
     for i in range (0,num_artists):
@@ -74,9 +75,12 @@ def get_data():
     # print(artists)
 
     return {
-        'json_r': json_r,
+        # 'r': r,
+        # 'json_r': json_r,
+        'song_image': song_image,
         'num_artists': num_artists,
         'main_artist': main_artist,
         'song_name': song_name,
         'all_artists': artists,
+        'song_preview': song_preview,
     }

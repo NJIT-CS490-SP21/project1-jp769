@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
+</head>
+
+<body>
+    <h1></h1>
+    <div class='main'>
+        <div class='item'>
+            <h2><img src='{{ song_image }}'></img></h2>
+            <p><b>{{ song_name }}</b></p>
+            {% for i in range (num_artists) %}
+                <p>{{ all_artists[i] }}</p>
+            {% endfor %}
+            <p>Song Preview: {{ song_preview }}</p>
+        </div>
+    </div>
+    <h4>Other Tracks by {{ artist }}: </h4>
+
+</body>
+
+</html>

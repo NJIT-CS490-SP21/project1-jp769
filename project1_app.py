@@ -10,19 +10,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    """ Returns root endpoint HTML """
-    print('Ran, updated.\n')
+    print('\nRan, updated.\n')
     
     spotify_data = get_data()
     
     # print(spotify_data['json_r'])
-    print(spotify_data['num_artists'])
-    print(spotify_data['main_artist'])
-    print(spotify_data['song_name'])
-    print(spotify_data['all_artists'])
 
     return render_template(
         "index.html",
+        song_image = spotify_data['song_image'],
+        song_name = spotify_data['song_name'],
+        artist = spotify_data['main_artist'],
+        num_artists = spotify_data['num_artists'],
+        all_artists = spotify_data['all_artists'],
+        song_preview = spotify_data['song_preview'],
     )
 
 app.run(
