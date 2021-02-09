@@ -1,0 +1,21 @@
+body {
+    background-color: #a8adb4;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 15px 10px;
+}
+
+.item {
+    padding: 4px;
+    text-align: center;
+}

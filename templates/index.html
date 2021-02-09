@@ -9,12 +9,21 @@
     <h1></h1>
     <div class='main'>
         <div class='item'>
-            <h2><img src='{{ song_image }}'></img></h2>
-            <p><b>{{ song_name }}</b></p>
+            <p><img src='{{ song_image }}'></img></p>
+            {% if song_preview != None %}
+            <p>Song Preview:</p>
+            <audio controls>
+                <source src='{{ song_preview }}' type='audio/mpeg'>
+            </audio>
+            {% else %}
+            <p>Song Preview Unavailable</p>
+            {% endif %}
+            
+            <h4><b>{{ song_name }}</b></h4>
             {% for i in range (num_artists) %}
                 <p>{{ all_artists[i] }}</p>
             {% endfor %}
-            <p>Song Preview: {{ song_preview }}</p>
+            
         </div>
     </div>
     <h4>Other Tracks by {{ artist }}: </h4>
