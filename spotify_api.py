@@ -60,27 +60,39 @@ def get_data():
     # print(len(r['tracks']), random_number) #debugging purpose only
     
     # json_r = r['tracks'][random_song]['artists']
-    song_name = r['tracks'][random_song]['name']
-    song_image = r['tracks'][random_song]['album']['images'][1]['url']
-    song_preview = r['tracks'][random_song]['preview_url']
-    num_artists = len(r['tracks'][random_song]['artists'])
-    main_artist = ''
-    artists=[]
+    main = {
+        'song_name': r['tracks'][random_song]['name'],
+        'song_image': r['tracks'][random_song]['album']['images'][1]['url'],
+        'song_preview': r['tracks'][random_song]['preview_url'],
+        'num_artists': len(r['tracks'][random_song]['artists']),
+        'main_artist': '',
+        'artists': []
+    }
     
-    for i in range (0,num_artists):
+    other_tracks={
+        'song_names': [],
+        'song_image': []
+    }
+    for i in range (0,main['num_artists']):
         if(r['tracks'][random_song]['artists'][i]['id'] == favorite_artists_id[random_artist]):
-            main_artist = r['tracks'][random_song]['artists'][i]['name']
-        artists.append(r['tracks'][random_song]['artists'][i]['name'])
+            main['main_artist'] = r['tracks'][random_song]['artists'][i]['name']
+        main['artists'].append(r['tracks'][random_song]['artists'][i]['name'])
         
     # print(artists)
+    for i in range (0,len(r['tracks'])):
+        if(i != random_song):
+            other_tracks['song_names'].append(r['tracks'][i]['name'])
+            other_tracks['song_image'].append(r['tracks'][i]['album']['images'][2]['url'])
 
     return {
         # 'r': r,
         # 'json_r': json_r,
-        'song_image': song_image,
-        'num_artists': num_artists,
-        'main_artist': main_artist,
-        'song_name': song_name,
-        'all_artists': artists,
-        'song_preview': song_preview,
+        # 'song_image': song_image,
+        # 'num_artists': num_artists,
+        # 'main_artist': main_artist,
+        # 'song_name': song_name,
+        # 'all_artists': artists,
+        # 'song_preview': song_preview,
+        'main_song': main,
+        'other_songs': other_tracks
     }
