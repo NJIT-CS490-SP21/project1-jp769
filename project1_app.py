@@ -13,23 +13,23 @@ def hello_world():
     print('\nRan, updated.\n')
     
     spotify_data = get_data()
-    print(spotify_data['main_song']['song_name'])
-    print(spotify_data['main_song']['song_image'])
-    print(spotify_data['other_songs']['song_names'])
-    print(spotify_data['other_songs']['song_image'])
+    # print(spotify_data['main_song']['song_name'])
+    # print(spotify_data['main_song']['song_image'])
+    # print(spotify_data['other_songs']['song_names'])
+    # print(spotify_data['other_songs']['song_image'])
     # print(spotify_data['json_r'])
 
     return render_template(
         "index.html",
         song_image = spotify_data['main_song']['song_image'],
         song_name = spotify_data['main_song']['song_name'],
-        other_songs = spotify_data['other_songs']['song_names'],
-        other_songs = spotify_data['other_songs']['song_image'],
-        num_songs = len(spotify_data['other_songs']['song_names'])
-    #     artist = spotify_data['main_artist'],
-    #     num_artists = spotify_data['num_artists'],
-    #     all_artists = spotify_data['all_artists'],
-    #     song_preview = spotify_data['song_preview'],
+        artist = spotify_data['main_song']['main_artist'],
+        num_artists = spotify_data['main_song']['num_artists'],
+        all_artists = spotify_data['main_song']['artists'],
+        song_preview = spotify_data['main_song']['song_preview'],
+        other_songs_names = spotify_data['other_songs']['song_names'],
+        other_songs_images = spotify_data['other_songs']['song_image'],
+        num_songs = len(spotify_data['other_songs']['song_names']),
     )
 
 app.run(

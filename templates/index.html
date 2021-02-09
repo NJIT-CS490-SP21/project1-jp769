@@ -27,6 +27,14 @@
         </div>
     </div>
     <h4>Other Tracks by {{ artist }}: </h4>
+    <div class='container'>
+        {% for i in range(num_songs) %}
+        <div class='item'>
+            <p><img src='{{ other_songs_images[i] }}'></img></p>
+            <p>{{ other_songs_names[i] }}</p>
+        </div>
+        {% endfor %}
+    </div>
 
 </body>
 
