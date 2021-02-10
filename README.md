@@ -14,7 +14,7 @@
 1. Create `.env` file in your project directory
 2. Add your SpotifyAPI Client ID and Client Secret from your application [dashboard](https://developer.spotify.com/dashboard/applications) with the lines: 
     `export CLIENT_ID='YOUR_CLIENT_ID'`
-    `export CLIENT_ID='YOUR_CLIENT_SECRET'`
+    `export CLIENT_SECRET='YOUR_CLIENT_SECRET'`
 3. In `spotify_api.py`, you can change the list in Line 16-25 to contain your favorite artists ID: `favorite_artists_id = ['artist1_id', 'artist2_id', 'etc']`. For artist ID see [How to Find Artist ID](https://support.tunecore.com/hc/en-us/articles/360040325651-How-to-Find-my-Spotify-Artist-ID).
 
 
