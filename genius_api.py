@@ -17,10 +17,10 @@ headers = {
 
 
 def get_lyrics(artist_name, song_name):
-    if '(' in song_name:
-        song_name = song_name.split('(')
-        other_artists = song_name[1].split('feat. ')[1].strip(')')
-        song_name = song_name[0]
+    
+    if '(' in song_name and ("with" in song_name or "feat" in song_name):
+        song_name = song_name.split('(')[0]
+    
     params = {'q': artist_name + " " + song_name,
         'text_format': 'dom',
     }

@@ -19,10 +19,8 @@
             <p>Song Preview Unavailable</p>
             {% endif %}
             
-            <h4><b>{{ song_name }}</b></h4>
-            {% for i in range (num_artists) %}
-                <p>{{ all_artists[i] }}</p>
-            {% endfor %}
+            <h3><b>{{ song_name }}</b></h3>
+            <p>By: {% for i in range (num_artists) %}{{ all_artists[i] }} {% endfor %}</p>
             {% if lyrics_url != None %}
                 <p><a href='{{ lyrics_url }}'>Click here to see the lyrics!</a></p>
             {% else %}

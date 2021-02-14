@@ -14,14 +14,15 @@ BASE_URL = 'https://api.spotify.com/v1/'
 
 # hardcoded Spotify artists ids 
 favorite_artists_id = [
-    '0fA0VVWsXO9YnASrzqfmYu',
-    '4MCBfE4596Uoi2O4DtmEMz',
-    '5INjqkS1o8h1imAzPqGZBb',
-    '4q3ewBCX7sLwd24euuV69X',
-    '2h93pZq0e7k5yf4dywlkpM',
-    '4O15NlyKLIASxsJ0PrXPfz',
-    '1RyvyyTE3xzB2ZywiAwp0i'
-    # '1tq9rmv85VHcxqvNdO1DQP'
+    '0fA0VVWsXO9YnASrzqfmYu', # Kid Cudi
+    '4MCBfE4596Uoi2O4DtmEMz', # Juice Wrld
+    '5INjqkS1o8h1imAzPqGZBb', # Tame Impala
+    '4q3ewBCX7sLwd24euuV69X', # Bad Bunny
+    '2h93pZq0e7k5yf4dywlkpM', # Frank Ocean
+    '26T3LtbuGT1Fu9m0eRq5X3', # Cage The Elephant
+    '4O15NlyKLIASxsJ0PrXPfz', # Lil Uzi Vert
+    '1RyvyyTE3xzB2ZywiAwp0i' # Future
+    # '1tq9rmv85VHcxqvNdO1DQP' # Joe (smaller artist tend to not have Genius pages so left this artist commented)
 ]
 
 def get_data():
@@ -78,7 +79,10 @@ def get_data():
     for i in range (0,main['num_artists']):
         if(r['tracks'][random_song]['artists'][i]['id'] == favorite_artists_id[random_artist]):
             main['main_artist'] = r['tracks'][random_song]['artists'][i]['name']
-        main['artists'].append(r['tracks'][random_song]['artists'][i]['name'])
+        if(i == main['num_artists']-1):
+            main['artists'].append(r['tracks'][random_song]['artists'][i]['name'])
+        else:
+            main['artists'].append(r['tracks'][random_song]['artists'][i]['name'] + ',')
     
     #Population other tracks with name and image to display
     for i in range (0,len(r['tracks'])):
