@@ -20,8 +20,8 @@ favorite_artists_id = [
     '4q3ewBCX7sLwd24euuV69X',
     '2h93pZq0e7k5yf4dywlkpM',
     '4O15NlyKLIASxsJ0PrXPfz',
-    '1RyvyyTE3xzB2ZywiAwp0i',
-    '1tq9rmv85VHcxqvNdO1DQP'
+    '1RyvyyTE3xzB2ZywiAwp0i'
+    # '1tq9rmv85VHcxqvNdO1DQP'
 ]
 
 def get_data():

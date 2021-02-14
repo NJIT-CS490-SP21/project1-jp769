@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, render_template
 from spotify_api import get_data
+from genius_api import get_lyrics
 
 app = Flask(__name__)
 
@@ -13,14 +14,13 @@ def hello_world():
     print('\nRan, updated.\n')
     
     spotify_data = get_data()
-    # print(spotify_data['main_song']['song_name'])
-    # print(spotify_data['main_song']['song_image'])
-    # print(spotify_data['other_songs']['song_names'])
-    # print(spotify_data['other_songs']['song_image'])
-    # print(spotify_data['json_r'])
-
+    # print(spotify_data['main_song']['main_artist'], spotify_data['main_song']['song_name'])
+    lyrics_url = get_lyrics(spotify_data['main_song']['main_artist'], spotify_data['main_song']['song_name'])
+    # print(lyrics_url)
+    
     return render_template(
         "index.html",
+        lyrics_url = lyrics_url,
         song_image = spotify_data['main_song']['song_image'],
         song_name = spotify_data['main_song']['song_name'],
         artist = spotify_data['main_song']['main_artist'],
