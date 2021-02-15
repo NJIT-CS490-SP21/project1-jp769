@@ -39,4 +39,8 @@ def get_lyrics(artist_name, song_name):
     if remote_song_info:
         song_url = remote_song_info['result']['url']
         return song_url
-    
+    else:
+        for hit in r['response']['hits']:
+            if song_name.lower() == hit['result']['title'].lower():
+                song_url = hit['result']['url']
+        return song_url
