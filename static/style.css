@@ -5,7 +5,7 @@ body {
 .main {
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .container {
@@ -19,4 +19,17 @@ body {
 .item {
     padding: 4px;
     text-align: center;
+    width: 300px;
+}
+
+#main {
+    background-color: #d2d6d9;
+    border-radius: 25px;
+}
+
+.button {
+    display: flex;
+    margin: 15px auto;
+    border-radius: 8px;
+    font-size: 20px;
 }

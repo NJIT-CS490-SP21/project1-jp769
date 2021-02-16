@@ -5,16 +5,18 @@ from dotenv import load_dotenv, find_dotenv
 # Load and find any vars in env (API keys)
 load_dotenv(find_dotenv())
 
+# base URL for Genius API
 BASE_URL = 'https://api.genius.com'
 
+# path to search using Genius API
 path = 'search/'
 
 request_uri = '/'.join([BASE_URL, path])
 
+#header info with access_token used in GET request to the API server
 headers = {
     'Authorization': 'Bearer {token}'.format(token=os.getenv('GENIUS_ACCESS_TOKEN'))
     }
-
 
 def get_lyrics(artist_name, song_name):
     
@@ -39,8 +41,10 @@ def get_lyrics(artist_name, song_name):
     if remote_song_info:
         song_url = remote_song_info['result']['url']
         return song_url
+        
     else:
         for hit in r['response']['hits']:
             if song_name.lower() == hit['result']['title'].lower():
                 song_url = hit['result']['url']
+                break
         return song_url

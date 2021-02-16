@@ -6,10 +6,9 @@
 </head>
 
 <body>
-    <h1></h1>
     <div class='main'>
-        <div class='item'>
-            <p><img src='{{ song_image }}'></img></p>
+        <div class='item' id="main">
+            <img style='border-radius: 20px 20px 10px 10px;' src='{{ song_image }}'></img>
             {% if song_preview != None %}
             <p>Song Preview:</p>
             <audio controls>
@@ -26,21 +25,22 @@
             {% else %}
                 <p>Sorry, no lyrics were found.</p>
             {% endif %}
-            <!--<a href="https://protected-headland-54233.herokuapp.com"><button>New Song</button></a>-->
-            <!--<button type="button"><a href="https://protected-headland-54233.herokuapp.com">New Song</a></button>-->
-            <button onClick="window.location.reload();">New Song</button>
         </div>
-    </div>
-    <h4 style='padding-left: 25%;'>Other Tracks by {{ artist }}: </h4>
-    <div class='container'>
-        {% for i in range(num_songs) %}
-        <div class='item'>
-            <p><img src='{{ other_songs_images[i] }}'></img></p>
-            <p>{{ other_songs_names[i] }}</p>
-        </div>
-        {% endfor %}
     </div>
 
+    <button class="button" onClick="window.location.reload();">New Random Song</button>
+    
+    <div class='other_tracks'>
+        <h4 style='padding-left: 25%;'>Other Tracks by {{ artist }}:</h4>
+        <div class='container'>
+            {% for i in range(num_songs) %}
+            <div class='item'>
+                <p><img src='{{ other_songs_images[i] }}'></img></p>
+                <p>{{ other_songs_names[i] }}</p>
+            </div>
+            {% endfor %}
+</div>
+    </div>
 </body>
 
 </html>
