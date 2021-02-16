@@ -15,8 +15,11 @@ def hello_world():
     
     spotify_data = get_data()
     # print(spotify_data['main_song']['main_artist'], spotify_data['main_song']['song_name'])
-    lyrics_url = get_lyrics(spotify_data['main_song']['main_artist'], spotify_data['main_song']['song_name'])
-    print(lyrics_url)
+    try:
+        lyrics_url = get_lyrics(spotify_data['main_song']['main_artist'], spotify_data['main_song']['song_name'])
+    except:
+        lyrics_url = None
+    # print(lyrics_url)
     
     return render_template(
         "index.html",

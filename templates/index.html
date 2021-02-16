@@ -6,25 +6,33 @@
 </head>
 
 <body>
-    <div class='main'>
-        <div class='item' id="main">
-            <img style='border-radius: 20px 20px 10px 10px;' src='{{ song_image }}'></img>
-            {% if song_preview != None %}
-            <p>Song Preview:</p>
-            <audio controls>
-                <source src='{{ song_preview }}' type='audio/mpeg'>
-            </audio>
-            {% else %}
-            <p>Song Preview Unavailable</p>
-            {% endif %}
+    <div class='main-container'>
+        <div class='sides'>
             
-            <h3><b>{{ song_name }}</b></h3>
-            <p>By: {% for i in range (num_artists) %}{{ all_artists[i] }} {% endfor %}</p>
-            {% if lyrics_url != None %}
-                <p><a href='{{ lyrics_url }}'>Click here to see the lyrics!</a></p>
-            {% else %}
-                <p>Sorry, no lyrics were found.</p>
-            {% endif %}
+            <div class='front'>
+                <img style="border-radius: 20px 20px 10px 10px;" src='{{ song_image }}'></img>
+                <center>(Hover over!!)</center>
+            </div>
+            
+            <div class='back'>
+                <h3><b>{{ song_name }}</b></h3>
+                <p>By: {% for i in range (num_artists) %}{{ all_artists[i] }} {% endfor %}</p>
+                
+                {% if song_preview != None %}
+                <p>Song Preview:</p>
+                <audio controls>
+                    <source src='{{ song_preview }}' type='audio/mpeg'>
+                </audio>
+                {% else %}
+                <p>Song Preview Unavailable</p>
+                {% endif %}
+            
+                {% if lyrics_url != None %}
+                    <p><a href='{{ lyrics_url }}'>Click here to see the lyrics!</a></p>
+                {% else %}
+                    <p>Sorry, no lyrics were found.</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 
@@ -39,8 +47,9 @@
                 <p>{{ other_songs_names[i] }}</p>
             </div>
             {% endfor %}
-</div>
+        </div>
     </div>
+    
 </body>
 
 </html>

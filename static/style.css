@@ -2,14 +2,8 @@ body {
     background-color: #a8adb4;
 }
 
-.main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .container {
-    padding: 0px 25%;
+    padding: 0px 20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -17,14 +11,8 @@ body {
 }
 
 .item {
-    padding: 4px;
     text-align: center;
-    width: 300px;
-}
-
-#main {
-    background-color: #d2d6d9;
-    border-radius: 25px;
+    justify-content: center;
 }
 
 .button {
@@ -32,4 +20,49 @@ body {
     margin: 15px auto;
     border-radius: 8px;
     font-size: 20px;
+}
+
+.main-container {
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    max-width: 320px;
+    perspective: 100;
+}
+
+.main-container:hover .sides {
+    transform: rotateY(180deg);
+}
+
+.main-container, .front, .back {
+    width: 300px;
+    height: 300px;
+}
+
+.sides {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .6s;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-size: 100% 100%;
+    transform: rotateY(0deg);
+}
+
+.back {
+    z-index: 2;
+    border-radius: 20px 20px 10px 10px;
+    background-color: #d2d6d9;
+    background-size: 100% 100%;
+    text-align: center;
+    transform: rotateY(180deg);
 }
