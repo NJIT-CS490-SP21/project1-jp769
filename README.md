@@ -1,5 +1,12 @@
 # project1-jp769 Application
 
+Clone this repo
+1. On https://github.com/new, create a new repository. (Name should not matter, but will be needed for step 4!)
+2. In Cloud9 terminal, in your home directory, clone the repo:`git clone https://github.com/NJIT-CS490-SP21/project1-jp769.git`
+3. cd into the repository that is created and you should see all the files.
+4. Then, connect this cloned repo to your new personal repo made in Step 1: git remote set-url origin https://www.github.com/{your-username}/{repo-name} (be sure to change your-username and repo-name, then remove the curly braces)
+5. Run git push origin main to push the local repo to remote. You should now see this same code in your personal repo.
+
 ## Requirements:
 1. `pip install Flask`
 2. `pip install python-dotenv`
