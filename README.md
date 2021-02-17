@@ -47,6 +47,9 @@ Clone this repo
 8. Add your secret key from .env with the matching variable names (CLIENT_ID, CLIENT_SECRET, GENIUS_ACCESS_TOKEN) and value (your key, without quotation marks!)
 9. Open your app with your new URL: `heroku open`. Click the link to open if it doesn't open on its own. Voila!
 
+
+My Heroku Deployment URL: https://protected-headland-54233.herokuapp.com/
+
 ### Technical Issues
 1. Unable to access my instance/workspace. I started by searching the internet for the error `"This is taking longer than expected. The delay may be caused by high CPU usage in your environment, or your T2 or T3 instance is running out of burstable CPU capacity credits, or there are VPC configuration issues. Please check documentation"`
 After reading stackoverflow and other websites I tried to manually stop my instance which was unsuccessful. Afterwards, I looked at the VPC configuration settings and saw that most of the suggestions were already set so that is when I reached out to the professor for help as well as for an extension given the first milestone was due that night.
