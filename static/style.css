@@ -22,6 +22,8 @@ body {
     font-size: 20px;
 }
 
+/*Following code for card flip was found online, minor changes only to class names and dimensions*/
+
 .main-container {
     margin-top: 2rem;
     margin-right: auto;
